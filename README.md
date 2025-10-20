@@ -1,4 +1,6 @@
-Tentu, berikut adalah draf `README.md` yang disesuaikan untuk proyek kita, dengan mengambil inspirasi struktur dari referensi yang Anda berikan, namun menggunakan teknologi dan *endpoint* yang telah kita bangun (Node.js, Express, Supabase, Vercel).
+Tentu. Saya mengerti, Anda ingin *teks markdown* di file `README.md` itu sendiri terlihat rapi dan sejajar agar mudah dibaca di *code editor*.
+
+Berikut adalah file `README.md` yang sudah dirapikan dengan meluruskan kolom-kolom tabel menggunakan spasi, sesuai dengan referensi yang Anda berikan.
 
 -----
 
@@ -7,25 +9,25 @@ Tentu, berikut adalah draf `README.md` yang disesuaikan untuk proyek kita, denga
 
 ## Deskripsi Umum
 
-Proyek ini adalah REST API *backend* yang dibangun menggunakan **Node.js** dan **Express.js** untuk mengelola data operasional layanan cuci sepatu. API ini terhubung ke database **Supabase** (PostgreSQL) untuk penyimpanan data yang persisten dan di-deploy ke **Vercel** agar dapat diakses secara publik.
+Proyek ini adalah REST API backend yang dibangun menggunakan **Node.js** dan **Express.js** untuk mengelola data operasional layanan cuci sepatu. API ini terhubung ke database **Supabase** (PostgreSQL) untuk penyimpanan data yang persisten dan di-deploy ke **Vercel** agar dapat diakses secara publik.
 
-Tujuan utama proyek ini adalah menyediakan *backend* yang fungsional dan *scalable* untuk aplikasi *frontend* (web atau *mobile*), yang memungkinkan pencatatan, pemantauan, dan pembaruan status cucian sepatu secara *real-time*.
+Tujuan utama proyek ini adalah menyediakan backend yang fungsional dan *scalable* untuk aplikasi frontend (web atau mobile), yang memungkinkan pencatatan, pemantauan, dan pembaruan status cucian sepatu secara *real-time*.
+
+---
 
 ## Fitur Utama API
 
 API ini mengimplementasikan fungsionalitas CRUD (Create, Read, Update, Delete) penuh.
 
-| Metode | Endpoint | Deskripsi |
-| :--- | :--- | :--- |
-| `GET` | `/items` | Mendapatkan seluruh daftar item cucian. |
-| `GET` | `/items/:id` | Mendapatkan satu item spesifik berdasarkan ID. |
-| `POST` | `/items` | Menambahkan data sepatu baru ke dalam antrian. |
-| `PUT` | `/items/:id` | Memperbarui data item (misal: mengubah status). |
-| `DELETE` | `/items/:id` | Menghapus data item dari database. |
+| Metode   | Endpoint     | Deskripsi                                        |
+| :---     | :---         | :---                                             |
+| `GET`    | `/items`     | Mendapatkan seluruh daftar item cucian.          |
+| `GET`    | `/items/:id` | Mendapatkan satu item spesifik berdasarkan ID.   |
+| `POST`   | `/items`     | Menambahkan data sepatu baru ke dalam antrian.   |
+| `PUT`    | `/items/:id` | Memperbarui data item (misal: mengubah status).  |
+| `DELETE` | `/items/:id` | Menghapus data item dari database.               |
 
----
-
-## Fitur Khusus: Filter Status
+### Fitur Khusus: Filter Status
 
 API ini mendukung pemfilteran *query parameter* untuk melihat item berdasarkan status pengerjaan.
 
@@ -38,26 +40,26 @@ Ini akan mengembalikan *array* yang hanya berisi item cucian dengan status "Sele
 
 ## Struktur Data (Skema Supabase)
 
-Data disimpan dalam tabel `laundry_items` di Supabase dengan skema berikut:
+Data disimpan dalam tabel `laundry_items` di Supabase dengan skema berikut. Kolom tanggal menggunakan tipe `DATE` (hanya tanggal, tanpa waktu).
 
-| Kolom | Tipe Data | Deskripsi |
-| :--- | :--- | :--- |
-| `id` | `bigint` (PK) | ID unik untuk setiap item, dibuat otomatis. |
-| `customer_name`| `text` | Nama pelanggan. |
-| `shoe_type` | `text` | Merek atau jenis sepatu (misal: "Nike Air Force 1"). |
-| `service_type` | `text` | Jenis layanan (misal: "Deep Clean", "Unyellowing"). |
-| `status` | `laundry_status` (ENUM) | Status pengerjaan ('Diterima', 'Dicuci', 'Dikeringkan', 'Selesai', 'Diambil'). |
-| `received_date`| `date` | Tanggal item diterima (default: hari ini). |
-| `finished_date`| `date` | Tanggal item selesai dikerjakan (nullable). |
+| Kolom           | Tipe Data                 | Deskripsi                                                                    |
+| :---            | :---                      | :---                                                                         |
+| `id`            | `bigint` (PK)             | ID unik untuk setiap item, dibuat otomatis.                                  |
+| `customer_name` | `text`                    | Nama pelanggan.                                                              |
+| `shoe_type`     | `text`                    | Merek atau jenis sepatu (misal: "Nike Air Force 1").                         |
+| `service_type`  | `text`                    | Jenis layanan (misal: "Deep Clean", "Unyellowing").                          |
+| `status`        | `laundry_status` (ENUM)   | Status pengerjaan ('Diterima', 'Dicuci', 'Dikeringkan', 'Selesai', 'Diambil'). |
+| `received_date` | `date`                    | Tanggal item diterima (default: hari ini).                                   |
+| `finished_date` | `date`                    | Tanggal item selesai dikerjakan (nullable).                                  |
 
 ---
 
 ## Teknologi yang Digunakan
 
 * **Node.js:** Runtime environment JavaScript sisi server.
-* **Express.js:** Framework *backend* minimalis untuk membangun API.
+* **Express.js:** Framework backend minimalis untuk membangun API.
 * **Supabase:** Platform *Backend-as-a-Service* (BaaS) yang menyediakan database PostgreSQL.
-* **Vercel:** Platform *cloud* untuk *hosting* dan *deployment* *serverless*.
+* **Vercel:** Platform cloud untuk hosting dan deployment *serverless*.
 * **Dependensi:** `@supabase/supabase-js`, `express`, `cors`, `dotenv`.
 
 ---
@@ -69,6 +71,7 @@ Data disimpan dalam tabel `laundry_items` di Supabase dengan skema berikut:
 ---
 
 ### 1. GET /items
+
 Mendapatkan semua item.
 
 **Response (200 OK):**
@@ -207,7 +210,7 @@ Menghapus item (misal: item dengan `id` 1).
 
 API ini telah di-deploy dan dapat diakses secara publik melalui URL berikut:
 
-**[MASUKKAN LINK DEPLOY VERCEL ANDA DI SINI]**
+**https://[GANTI-DENGAN-URL-VERCEL-ANDA].vercel.app**
 
 ```
 ```
