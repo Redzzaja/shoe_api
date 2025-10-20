@@ -59,10 +59,6 @@ Data disimpan dalam tabel `laundry_items` di Supabase dengan skema berikut. Kolo
 
 ## Contoh Request dan Response
 
-**URL Basis:** `[GANTI DENGAN LINK VERCEL ANDA]`
-
----
-
 ### 1. GET /items
 
 Mendapatkan semua item.
@@ -203,7 +199,7 @@ Menghapus item (misal: item dengan `id` 1).
 
 API ini telah di-deploy dan dapat diakses secara publik melalui URL berikut:
 
-**https://[GANTI-DENGAN-URL-VERCEL-ANDA].vercel.app**
+**(https://shoe-api-sigma.vercel.app/)**
 
 ```
 ```
