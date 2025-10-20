@@ -199,7 +199,4 @@ Menghapus item (misal: item dengan `id` 1).
 
 API ini telah di-deploy dan dapat diakses secara publik melalui URL berikut:
 
-**(https://shoe-api-sigma.vercel.app/)**
-
-```
-```
+(https://shoe-api-sigma.vercel.app/)
