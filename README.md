@@ -1,11 +1,4 @@
-Tentu. Saya mengerti, Anda ingin *teks markdown* di file `README.md` itu sendiri terlihat rapi dan sejajar agar mudah dibaca di *code editor*.
-
-Berikut adalah file `README.md` yang sudah dirapikan dengan meluruskan kolom-kolom tabel menggunakan spasi, sesuai dengan referensi yang Anda berikan.
-
------
-
-````markdown
-# REST API Layanan Cuci Sepatu (Node.js + Supabase)
+### REST API Layanan Cuci Sepatu (Node.js + Supabase)
 
 ## Deskripsi Umum
 
